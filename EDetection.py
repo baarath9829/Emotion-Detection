@@ -5,14 +5,14 @@ def plot(image,landmark): #passing img AS argument causing problem
     image_c = image.copy
     for point in landmark:
         pos = (point[0,0],point[0,1])
-        print pos
+        print (pos)
         cv2.circle(image_c, pos, 3, color=(0, 255, 0))
     return image_c
         
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 win = dlib.image_window()
-img = cv2.imread("testface.jpg",1);
+img = cv2.imread("testface.jpg",-1);
 image = img.copy()
 win.set_image(img)
 dets = detector(img,1)
@@ -26,7 +26,7 @@ for k, d in enumerate(dets):
     
 for point in mat:
         pos = (point[0,0],point[0,1])
-        print pos
+        print (pos)
         cv2.circle(image, pos, 3, (0, 255, 0),-1)    
 win.add_overlay(dets)
 cv2.imshow("landmark", image)
