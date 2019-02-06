@@ -12,7 +12,7 @@ def plot(image,landmark): #passing img AS argument causing problem
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 win = dlib.image_window()
-img = cv2.imread("testface.jpg",1);
+img = cv2.imread("img3.jpg",1);
 image = img.copy()
 win.set_image(img)
 dets = detector(img,1)
